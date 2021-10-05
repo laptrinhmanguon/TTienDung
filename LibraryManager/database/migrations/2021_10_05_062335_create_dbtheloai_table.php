@@ -14,7 +14,10 @@ class CreateDbtheloaiTable extends Migration
     public function up()
     {
         Schema::create('dbtheloai', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_theloai');
+            $table->string('tentheloai')->unique();
+            $table->unsignedInteger('id_Ktheloai');
+            $table->foreign('id_Ktheloai')->references('id_sach')->on('dbsach');
             $table->timestamps();
         });
     }

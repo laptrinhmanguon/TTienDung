@@ -14,7 +14,10 @@ class CreateDbNhaXuatbanTable extends Migration
     public function up()
     {
         Schema::create('db_nha_xuatban', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_nhaxuatban')->unique();
+            $table->string('tennhaxuatban')->unique();
+            $table->unsignedInteger('id_Knhaxuatban');
+            $table->foreign('id_Knhaxuatban')->references('id_sach')->on('dbsach');
             $table->timestamps();
         });
     }

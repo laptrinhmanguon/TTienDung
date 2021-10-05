@@ -14,7 +14,11 @@ class CreateDbKhoTable extends Migration
     public function up()
     {
         Schema::create('db_kho', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id_sach')->unique();
+            $table->integer('soluong');
+            $table->increments('id_kho');
+            $table->unsignedInteger('id_Kkho');
+            $table->foreign('id_Kkho')->references('id_sach')->on('dbsach');
             $table->timestamps();
         });
     }

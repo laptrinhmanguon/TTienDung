@@ -14,7 +14,10 @@ class CreateDbNguoidungTable extends Migration
     public function up()
     {
         Schema::create('db_nguoidung', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_nguoidung')->unique();
+            $table->string('tennguoidung');
+            $table->string('diachi');
+            $table->integer('sodienthoai')->unique();
             $table->timestamps();
         });
     }

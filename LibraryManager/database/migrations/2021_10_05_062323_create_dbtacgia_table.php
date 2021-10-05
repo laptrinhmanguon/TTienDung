@@ -14,9 +14,13 @@ class CreateDbtacgiaTable extends Migration
     public function up()
     {
         Schema::create('dbtacgia', function (Blueprint $table) {
-            $table->id();
+           $table->increments('id_tacgia');
+            $table->string('tentacgia')->unique();
+            $table->unsignedInteger('id_Ktacgia');
+            $table->foreign('id_Ktacgia')->references('id_sach')->on('dbsach');
             $table->timestamps();
         });
+        
     }
 
     /**
