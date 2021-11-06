@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDbtheloaiTable extends Migration
+class CreateDbDocgiaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateDbtheloaiTable extends Migration
      */
     public function up()
     {
-        Schema::create('dbtheloai', function (Blueprint $table) {
-            $table->increments('id_theloai');
-            $table->string('tentheloai')->unique();
-            $table->unsignedInteger('id_Ktheloai');
-            $table->foreign('id_Ktheloai')->references('id_sach')->on('dbsach');
+        Schema::create('doc_gia', function (Blueprint $table) {
+            $table->id();
+            $table->string('tendocgia');
+            $table->string('madocgia');
+            $table->string('diachi');
+            $table->integer('sodienthoai');
+            $table->string('sachdangmuon');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateDbtheloaiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dbtheloai');
+        Schema::dropIfExists('db_docgia');
     }
 }

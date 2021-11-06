@@ -13,15 +13,15 @@ class CreateDbMuonSachTable extends Migration
      */
     public function up()
     {
-        Schema::create('db_muon_sach', function (Blueprint $table) {
-            $table->increments('id_muon');
-            $table->integer('id_nguoidung')->unique();
-            $table->integer('id_sach');
-            $table->dateTime('ngaymuon');
-            $table->unsignedInteger('id_K_Mmuonsach');
-            $table->foreign('id_K_Mmuonsach')->references('id_sach')->on('dbsach');
-            $table->unsignedInteger('id_K_Mnguoidung');
-            $table->foreign('id_K_Mnguoidung')->references('id_nguoidung')->on('db_nguoidung');
+        Schema::create('muon_tra', function (Blueprint $table) {
+            $table->id();
+            $table->string('tendocgia');
+            $table->string('madocgia');
+            $table->string('tensach');
+            $table->string('masach');
+            $table->integer('sodienthoai');
+            $table->string('sophieu');
+            $table->string('thuthu');
             $table->timestamps();
         });
     }

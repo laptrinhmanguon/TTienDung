@@ -33,7 +33,7 @@ Route::get('/', function () {
 // Route:: get('/toi-la-document1',function(){
 
 //     echo " tôi là router 1";}
-//     )->name('document'); 
+//     )->name('document');
 
     Route::group(['prefix'=>'admin'],function(){
         Route:: group(['prefix'=>'bai-viet'], function(){
@@ -52,7 +52,7 @@ Route::get('/', function () {
                 echo ' danh muc';
             });
         });
-    
+
     });
 
     Route::get('/view1/{ten}/{tuoi?}', function ($ten,$tuoi) {
@@ -72,5 +72,23 @@ Route::get('/', function () {
     Route::get('category/get-cookie',[\App\Http\Controllers\Category::class, 'GetCookie']);
     Route::get('category/upload',[\App\Http\Controllers\Category::class, 'Upload']);
 
-    
+
     Route::get('detail',[\App\Http\Controllers\PostController::class, 'detail']);
+
+//    Library index
+    Route::get('/',[\App\Http\Controllers\SachController::class, 'index']);
+    Route::get('seach',[\App\Http\Controllers\SeachController::class, 'index']);
+    Route::get('muontra',[\App\Http\Controllers\MuonTraController::class, 'index']);
+    Route::get('docgia',[\App\Http\Controllers\DocGiaController::class, 'index']);
+
+
+//  Library add
+Route::post('/add-sach', [\App\Http\Controllers\SachController::class, 'add']);
+Route::post('/add-muon', [\App\Http\Controllers\MuontraController::class, 'add']);
+Route::post('/add-docgia', [\App\Http\Controllers\DocgiaController::class, 'add']);
+
+
+//  Library delete
+Route::delete('/sach/delete/{id}', [\App\Http\Controllers\SachController::class, 'delete']);
+Route::delete('/muon-tra/delete/{id}', [\App\Http\Controllers\MuontraController::class, 'delete']);
+Route::delete('/doc-gia/delete/{id}', [\App\Http\Controllers\DocgiaController::class, 'delete']);

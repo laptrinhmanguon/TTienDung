@@ -13,13 +13,15 @@ class CreateDbsachTable extends Migration
      */
     public function up()
     {
-        Schema::create('dbsach', function (Blueprint $table) {
-            $table->increments('id_sach');
-            $table->string('ten_sach')->unique();
-            $table->integer('id_tacgia')->nullable(true);
-            $table->integer('id_theloai');
-            $table-> integer('id_nhaxuatban');
-            $table->dateTime('ngayxuatban');
+        Schema::create('sach', function (Blueprint $table) {
+            $table->id();
+            $table->string('tensach')->unique();
+            $table->string('tacgia');
+            $table-> string('masach');
+//          $table->string('id_theloai');
+            $table->string('theloai');
+//          $table-> string('id_nhaxuatban');
+            $table->string('namxuatban');
             $table->timestamps();
         });
     }
