@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,12 +7,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Quản lý thư viện</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {{--    <link rel="stylesheet" href="assets/stylesheets/main.css">--}}
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css'>
-
     <style>
-
+        {{--/* @include transform(rotate(30deg)); */--}}
+        {{--/* @include centerAbsolute(top); */--}}
+        {{--/* @include flexbox; */--}}
+        {{--/* @include justify-content(space-between); */--}}
         /*.color{
             color: map-get($color, red);
         }*/
@@ -65,7 +67,37 @@
         .ta-justify {
             text-align: justify; }
 
-
+        {{--/* @include transform(rotate(30deg)); */--}}
+        {{--/* @include centerAbsolute(top); */--}}
+        {{--/* @include flexbox; */--}}
+        {{--/* @include justify-content(space-between); */--}}
+        /*@font-face {*/
+        /*    font-family: Averta;*/
+        /*    src: url("../fonts/Averta.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Bold;*/
+        /*    src: url("../fonts/Averta-Bold.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Extra-Bold;*/
+        /*    src: url("../fonts/Averta-Extra-Bold.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Semibold;*/
+        /*    src: url("../fonts/Averta-Semibold.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Black;*/
+        /*    src: url("../fonts/Averta-Black.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Light;*/
+        /*    src: url("../fonts/Averta-Light.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Light;*/
+        /*    src: url("../fonts/Averta-Light.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Thin-Italic;*/
+        /*    src: url("../fonts/Averta-Thin-Italic.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Bold-Italic;*/
+        /*    src: url("../fonts/Averta-Bold-Italic.otf"); }*/
         *,
         *::before,
         *::after {
@@ -1791,23 +1823,6 @@
         .btn-edit_user > button:hover {
             background: #ffffff;
             color: #7158e2; }
-        .btn-delete_user {
-            text-align: right; }
-
-        .btn-delete_user > button {
-            padding: 2px 20px;
-            margin-top: 5px;
-            border-radius: 5px;
-            outline: none;
-            box-shadow: 0px 1px 6px 3px rgba(0, 0, 0, 0.24);
-            -webkit-box-shadow: 0px 1px 6px 3px rgba(0, 0, 0, 0.24);
-            -moz-box-shadow: 0px 1px 6px 3px rgba(0, 0, 0, 0.24);
-            background: #7158e2;
-            color: #ffffff;
-            border: 1px solid #7158e2; }
-        .btn-delete_user > button:hover {
-            background: #ffffff;
-            color: #7158e2; }
 
         .create-user > button {
             padding: 2px 20px;
@@ -1842,7 +1857,6 @@
                 flex: 0 0 100%;
                 max-width: 100%;
                 margin-bottom: 20px; } }
-
         .btn {
             display: inline-block;
             *display: inline;
@@ -1976,7 +1990,7 @@
 
     </style>
 </head>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <body>
 <div class="container-fluid">
     <!-- PHẦN MENU -->
@@ -2004,23 +2018,36 @@
                                     Quản lý
                                 </span>
                         </article>
-
                     </a>
                 </li>
-                <li>
-                    <a href="{{url('/seach')}}">
-                        <article>
-                            <section>
-                                <i class="fas fa-search"></i>
-                            </section>
-                            <span>
-                                    Tìm kiếm
-                                </span>
-                        </article>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
+                        <i class="fas fa-book-open" style="padding-right: 25px"></i>
+                        <span class="nav-link-text" style="padding-right: 135px">Thể loại </span>
                     </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents">
+                        <li>
+                            <a href="{{url('/theloai/truyentranh')}}">Truyện tranh</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/khoahoc')}}">khoa học </a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/daoly')}}"> Đạo lý </a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/kinhdoanh')}}"> Kinh doanh </a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/truyen18')}}"> Truyện 18+</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/truyenthieunhi')}}"> Truyện Thiếu Nhi </a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="{{url('/muontra')}}">
+                    <a href="{{url('/muon-tra')}}">
                         <article>
                             <section>
                                 <i class="fas fa-handshake-slash"></i>
@@ -2032,7 +2059,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{url('/docgia')}}">
+                    <a href="{{url('/doc-gia')}}">
                         <article>
                             <section>
                                 <i class="fas fa-user-check"></i>
@@ -2049,73 +2076,135 @@
     <!-- ***************************************************************************************************************** -->
     <!-- PHẦN NỘI DUNG -->
     <div class="content">
-        <div class="list_user">
-            <h2>Danh sách độc giả</h2>
-            <div class="create-user">
-                <button type="button">Thêm độc giả</button>
-            </div>
-
-            <table class="table table-bordered" >
-                <thead class="thead-dark" >
-                <tr >
-                    <th scope="col">STT</th>
-                    <th scope="col">Tên Độc Giả</th>
-                    <th scope="col">Mã Độc Giả</th>
-                    <th scope="col">Lớp</th>
-                    <th scope="col">SĐT</th>
-                    <th scope="col">Sách Đang Mượn</th>
-                    <th scope="col">Chỉnh Sửa</th>
-                    <th scope="col">Xóa</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Trương Tiến Dũng</td>
-                    <td>43557</td>
-                    <td>IT18A1.11</td>
-                    <td>03558285253</td>
-                    <td>Tấm Cám</td>
-                    <td><button type="button" class="btn btn-primary">Chỉnh Sửa</button></td>
-                    <td><button type="button" class="btn btn-primary">Xóa</button></td>
-                </tr>
-
-                
-
-                </tbody>
-            </table>
-
+        <div class="search--form">
+            <form>
+                <label>
+                    <input type="text" placeholder="Nhập mã số...">
+                </label>
+                <label>
+                    <button>
+                        <i class="fas fa-search"></i>
+                    </button>
+                </label>
+            </form>
+        </div>
+        <div class="result_user">
+            <section class="user--info">
+                <h2>Thông tin độc giả</h2>
+                <form action="{{url('/add-muon')}}" method="post">
+                    @csrf
+                    <div class="_card--form">
+                        <div class="input-contact">
+                            <label><b>Tên Độc Giả :</b>
+                                <input type="text" name="tendocgia" placeholder="Nguyễn Văn A">
+                            </label>
+                        </div>
+                        <div class="input-contact">
+                            <label><b>Mã Độc Giả :</b>
+                                <input type="text" name="madocgia" placeholder="DG1">
+                            </label>
+                        </div>
+                        <div class="input-contact">
+                            <label><b>Lớp :</b>
+                                <input type="text" name="lop" placeholder="IT18A1.11">
+                            </label>
+                        </div>
+                        <div class="input-contact">
+                            <label><b>Số Điện Thoại :</b>
+                                <input type="text" name="sodienthoai" placeholder="013456789">
+                            </label>
+                        </div>
+                        <div class="input-contact">
+                            <label><b>Tên Sách :</b>
+                                <input type="text" name="tensach" placeholder="Toán">
+                            </label>
+                        </div>
+                        <div class="input-contact">
+                            <label><b>Mã Sách :</b>
+                                <input type="text" name="masach" placeholder="T01">
+                            </label>
+                        </div>
+                        <div class="input-contact">
+                            <label><b>Số Phiếu :</b>
+                                <input type="text" name="sophieu" placeholder="- 01">
+                            </label>
+                        </div>
+                        <div class="input-contact">
+                            <label><b>Thủ Thư :</b>
+                                <input type="text" name="thuthu" placeholder="Nguyễn Văn B">
+                            </label>
+                        </div>
+                    </div>
+                        <button type="submit" class="btn">
+                            Mượn sách
+                        </button>
+                </form>
+            </section>
+            <section class="user--borrow_books">
+                <h2>Sách đã mượn</h2>
+                <table class="table table-bordered" >
+                    <thead class="thead-dark" >
+                    <tr >
+                        <th scope="col">STT</th>
+                        <th scope="col">Tên Độc Giả</th>
+                        <th scope="col">Mã Độc Giả</th>
+                        <th scope="col">Lớp :</th>
+                        <th scope="col">Số Điện Thoại</th>
+                        <th scope="col">Tên Sách</th>
+                        <th scope="col">Mã Sách</th>
+                        <th scope="col">Số Phiếu</th>
+                        <th scope="col">Thủ Thư</th>
+                        <th scope="col">Trả Sách</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($Tbl_muon as $mt)
+                    <tr>
+                        <th>{{$mt -> id}}</th>
+                        <td>{{$mt -> tendocgia}}</td>
+                        <td>{{$mt -> madocgia}}</td>
+                        <td>{{$mt -> lop}}</td>
+                        <td>{{$mt -> sodienthoai}}</td>
+                        <td>{{$mt -> tensach}}</td>
+                        <td>{{$mt -> masach}}</td>
+                        <td>{{$mt -> sophieu}}</td>
+                        <td>{{$mt -> thuthu}}</td>
+                        <td>
+                            <form action="/muon-tra/delete/{{$mt -> id}}" method="post" onsubmit="return ConfirmDelete( this )">
+                                @method('DELETE')
+                                @csrf
+                                <section class="btn-edit_user">
+                                    <button type="submit">
+                                        Trả Sách
+                                    </button>
+                                </section>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </section>
         </div>
     </div>
 
+    <!-- ********************************************************************************************************************* -->
+    <!-- PHẦN TRẢ SÁCH -->
+
+
+
 
     <!-- ********************************************************************************************************************* -->
-    <!-- PHẦN CHỈNH SỬA ĐỘC GIẢ -->
-    <div class="edit_user">
+    <!-- PHẦN MƯỢN SÁCH -->
+    <div class="create-borrow_book">
         <form action="">
-            <h2>Chỉnh sửa độc giả</h2>
+            <h2>Mượn sách</h2>
             <div class="_card--form">
-                <div class="input-contact">
+                <div class="input-book">
                     <label>
-                        <input type="text" name="name" placeholder="Nguyễn Văn A">
+                        <input type="text" name="name" placeholder="Nhập tên sách hoặc mã sách...">
                         <section>
-                            Tên sách
-                        </section>
-                    </label>
-                </div>
-                <div class="input-contact">
-                    <label>
-                        <input type="text" name="dia-chi" placeholder="abc123">
-                        <section>
-                            Địa chỉ
-                        </section>
-                    </label>
-                </div>
-                <div class="input-contact">
-                    <label>
-                        <input type="text" name="phone" placeholder="0123456789">
-                        <section>
-                            Số điện thoại
+                            Tên sách hoặc mã sách
                         </section>
                     </label>
                 </div>
@@ -2131,68 +2220,10 @@
             </div>
         </form>
     </div>
-
-
-    <!-- ********************************************************************************************************************* -->
-    <!-- PHẦN CHỈNH SỬA ĐỘC GIẢ -->
-    <div class="create_user">
-        <form action="{{url('/add-docgia')}}" method="post">
-            @csrf
-            <h2>Thêm Độc Giả</h2>
-            <div class="_card--form">
-                <div class="input-contact">
-                    <label>
-                        <input type="text" name="tendocgia" placeholder="Nguyễn Văn A">
-                        <section>
-                            Tên Độc Giả
-                        </section>
-                    </label>
-                </div>
-                <div class="input-contact">
-                    <label>
-                        <input type="text" name="madocgia" placeholder="DG1">
-                        <section>
-                            Mã Độc Giả
-                        </section>
-                    </label>
-                </div>
-                <div class="input-contact">
-                    <label>
-                        <input type="text" name="diachi" placeholder="Đà Nẵng">
-                        <section>
-                            Địa chỉ
-                        </section>
-                    </label>
-                </div>
-                <div class="input-contact">
-                    <label>
-                        <input type="text" name="sodienthoai" placeholder="0123456789">
-                        <section>
-                            Số điện thoại
-                        </section>
-                    </label>
-                </div>
-                <div class="input-contact">
-                    <label>
-                        <input type="text" name="sachdangmuon" placeholder="Toán, văn, ...">
-                        <section>
-                            Sách đang mượn
-                        </section>
-                    </label>
-                </div>
-
-
-                <div class="button_edit">
-                    <div class="button--close">
-                        <button type="button" class="close-edit-card">Thoát</button>
-                    </div>
-                    <div class="button--submit">
-                        <button type="submit">Xác nhận</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script>
     document.addEventListener("DOMContentLoaded",function(){
         var menu = document.getElementById('menu-toggle'),
@@ -2285,9 +2316,7 @@
 
     },false);
 </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="assets/javascripts/main.js"></script>
 </body>
 
 </html>

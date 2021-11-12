@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +7,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Quản lý thư viện</title>
-
+{{--    <link rel="stylesheet" href="assets/stylesheets/main.css">--}}
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-
+        {{--/* @include transform(rotate(30deg)); */--}}
+        {{--/* @include centerAbsolute(top); */--}}
+        {{--/* @include flexbox; */--}}
+        {{--/* @include justify-content(space-between); */--}}
         /*.color{
             color: map-get($color, red);
         }*/
@@ -64,7 +67,37 @@
         .ta-justify {
             text-align: justify; }
 
-
+        {{--/* @include transform(rotate(30deg)); */--}}
+        {{--/* @include centerAbsolute(top); */--}}
+        {{--/* @include flexbox; */--}}
+        {{--/* @include justify-content(space-between); */--}}
+        /*@font-face {*/
+        /*    font-family: Averta;*/
+        /*    src: url("../fonts/Averta.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Bold;*/
+        /*    src: url("../fonts/Averta-Bold.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Extra-Bold;*/
+        /*    src: url("../fonts/Averta-Extra-Bold.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Semibold;*/
+        /*    src: url("../fonts/Averta-Semibold.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Black;*/
+        /*    src: url("../fonts/Averta-Black.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Light;*/
+        /*    src: url("../fonts/Averta-Light.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Light;*/
+        /*    src: url("../fonts/Averta-Light.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Thin-Italic;*/
+        /*    src: url("../fonts/Averta-Thin-Italic.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Bold-Italic;*/
+        /*    src: url("../fonts/Averta-Bold-Italic.otf"); }*/
         *,
         *::before,
         *::after {
@@ -1956,6 +1989,7 @@
         /*# sourceMappingURL=main.css.map */
 
     </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
@@ -1985,23 +2019,36 @@
                                     Quản lý
                                 </span>
                         </article>
-
                     </a>
                 </li>
-                <li>
-                    <a href="{{url('/seach')}}">
-                        <article>
-                            <section>
-                                <i class="fas fa-search"></i>
-                            </section>
-                            <span>
-                                    Tìm kiếm
-                                </span>
-                        </article>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
+                        <i class="fas fa-book-open" style="padding-right: 25px"></i>
+                        <span class="nav-link-text" style="padding-right: 135px">Thể loại </span>
                     </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents">
+                        <li>
+                            <a href="{{url('/theloai/truyentranh')}}">Truyện tranh</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/khoahoc')}}">khoa học </a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/daoly')}}"> Đạo lý </a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/kinhdoanh')}}"> Kinh doanh </a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/truyen18')}}"> Truyện 18+</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/truyenthieunhi')}}"> Truyện Thiếu Nhi </a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="{{url('/muontra')}}">
+                    <a href="{{url('/muon-tra')}}">
                         <article>
                             <section>
                                 <i class="fas fa-handshake-slash"></i>
@@ -2013,7 +2060,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{url('/docgia')}}">
+                    <a href="{{url('/doc-gia')}}">
                         <article>
                             <section>
                                 <i class="fas fa-user-check"></i>
@@ -2029,14 +2076,11 @@
     </div>
     <!-- ***************************************************************************************************************** -->
     <!-- PHẦN NỘI DUNG -->
-
     <div class="content">
-
         <div class="home-page__products">
             <div class="create-book">
                 <button type="button">Thêm sách</button>
             </div>
-
             <div class="search--form">
                 <form>
                     <label>
@@ -2057,50 +2101,50 @@
                     <th scope="col">Thể Loại</th>
                     <th scope="col">Mã Sách</th>
                     <th scope="col">Tác Giả</th>
+                    <th scope="col">Năm XB</th>
                     <th scope="col">Trạng Thái</th>
                     <th scope="col">Chỉnh Sửa</th>
                     <th scope="col">Xóa</th>
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($Tbl_sach as $s)
+                        @method('DELETE')
+                        @csrf
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Trương Tiến Dũng</td>
-                    <td>Anime</td>
-                    <td>T001</td>
-                    <td>TS.Phi Nhật</td>
+                    <th>{{$s -> id}}</th>
+                    <td>{{$s -> tensach}}</td>
+                    <td>{{$s -> theloai}}</td>
+                    <td>{{$s -> masach}}</td>
+                    <td>{{$s -> tacgia}}</td>
+                    <td>{{$s -> namxuatban}}</td>
                     <td>Chưa Mượn</td>
-                    <td><button type="button" class="btn btn-primary">Chỉnh Sửa</button></td>
-                    <td><button type="button" class="btn btn-primary">Xóa</button></td>
+                    <td>
+                        <form action="">
+                            <section class="btn-edit_user">
+                                <button type="submit">
+                                    Chỉnh sửa
+                                </button>
+                            </section>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/sach/delete/{{$s -> id}}" method="post" onsubmit="return ConfirmDelete( this )">
+                            @method('DELETE')
+                            @csrf
+                            <section class="btn-edit_user">
+                                <button type="submit">
+                                    Delete
+                                </button>
+                            </section>
+                        </form>
+                    </td>
                 </tr>
-
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Trương Tiến Dũng</td>
-                    <td>Anime</td>
-                    <td>T001</td>
-                    <td>TS.Phi Nhật</td>
-                    <td>Chưa Mượn</td>
-                    <td><button type="button" class="btn btn-primary">Chỉnh Sửa</button></td>
-                    <td><button type="button" class="btn btn-primary">Xóa</button></td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Trương Tiến Dũng</td>
-                    <td>Anime</td>
-                    <td>T001</td>
-                    <td>TS.Phi Nhật</td>
-                    <td>Chưa Mượn</td>
-                    <td><button type="button" class="btn btn-primary">Chỉnh Sửa</button></td>
-                    <td><button type="button" class="btn btn-primary">Xóa</button></td>
-                </tr>
-
+                @endforeach
                 </tbody>
             </table>
-
-
-
-
+        </div>
+    </div>
 
 
     <!-- ********************************************************************************************************************* -->
@@ -2111,7 +2155,7 @@
             <div class="_card--form">
                 <div class="input-contact">
                     <label>
-                        <input type="text" name="ten-sach" placeholder="Tên sách">
+                        <input type="text" name="tensach" placeholder="Tên sách">
                         <section>
                             Tên sách
                         </section>
@@ -2119,43 +2163,43 @@
                 </div>
                 <div class="input-contact">
                     <label>
-                        <input type="text" name="the-loai" placeholder="hành động">
+                        <input type="text" name="masach" placeholder="T01">
                         <section>
-                            thể loại
+                            Mã Sách
                         </section>
                     </label>
                 </div>
                 <div class="input-contact">
                     <label>
-                        <input type="text" name="nam-xuat-ban" placeholder="2012">
+                        <input name="theloai" list="theloai">
+                        <section>
+                            thể loại
+                        </section>
+                        <datalist id="theloai">
+                            <option name="truyentranh">Truyện Tranh</option>
+                            <option name="khoahoc">Khoa Học</option>
+                            <option name="daoly">Đạo Lý</option>
+                            <option name="kinhdoanh">Kinh Doanh</option>
+                            <option name="truyen18">Truyện 18+</option>
+                            <option name="truyenthieunhi">Truyện Thiếu Nhi</option>
+                        </datalist>
+                    </label>
+                </div>
+                <div class="input-contact">
+                    <label>
+                        <input type="text" name="namxuatban" placeholder="2012">
                         <section>
                             năm xuất bản
                         </section>
                     </label>
                 </div>
-                <!-- <div class="input-contact">
-                    <label>
-                        <input type="text" name="ma-sach" placeholder="ms123">
-                        <section>
-                            mã sách
-                        </section>
-                    </label>
-                </div> -->
                 <div class="input-contact">
                     <label>
-                        <input type="text" name="tac-gia" placeholder="Raizel">
+                        <input type="text" name="tacgia" placeholder="Raizel">
                         <section>
                             tác giả
                         </section>
                     </label>
-                </div>
-                <div class="input-file">
-                    <section>
-                        Hình ảnh
-                    </section>
-                    <article>
-                        <input type="file" name="avatar" accept="image/*">
-                    </article>
                 </div>
                 <div class="input-checkbox">
                     <section>
@@ -2183,160 +2227,91 @@
 
     <!-- ********************************************************************************************************************* -->
     <!-- PHẦN THÊM MỚI SÁCH -->
-{{--            <div class="create_card">--}}
-{{--                <form action="">--}}
-{{--                    <h2>Thêm mới sách</h2>--}}
-{{--                    <div class="_card--form">--}}
-{{--                        <div class="input-contact">--}}
-{{--                            <label>--}}
-{{--                                <input type="text" name="ten-sach" placeholder="Tên sách">--}}
-{{--                                <section>--}}
-{{--                                    Tên sách--}}
-{{--                                </section>--}}
-{{--                            </label>--}}
-{{--                        </div>--}}
-{{--                        <div class="input-contact">--}}
-{{--                            <label>--}}
-{{--                                <input type="text" name="the-loai" placeholder="hành động">--}}
-{{--                                <section>--}}
-{{--                                    thể loại--}}
-{{--                                </section>--}}
-{{--                            </label>--}}
-{{--                        </div>--}}
-{{--                        <div class="input-contact">--}}
-{{--                            <label>--}}
-{{--                                <input type="text" name="nam-xuat-ban" placeholder="2012">--}}
-{{--                                <section>--}}
-{{--                                    năm xuất bản--}}
-{{--                                </section>--}}
-{{--                            </label>--}}
-{{--                        </div>--}}
-{{--                        <!-- <div class="input-contact">--}}
-{{--                            <label>--}}
-{{--                                <input type="text" name="ma-sach" placeholder="ms123">--}}
-{{--                                <section>--}}
-{{--                                    mã sách--}}
-{{--                                </section>--}}
-{{--                            </label>--}}
-{{--                        </div> -->--}}
-{{--                        <div class="input-contact">--}}
-{{--                            <label>--}}
-{{--                                <input type="text" name="tac-gia" placeholder="Raizel">--}}
-{{--                                <section>--}}
-{{--                                    tác giả--}}
-{{--                                </section>--}}
-{{--                            </label>--}}
-{{--                        </div>--}}
-{{--                        <div class="input-file">--}}
-{{--                            <section>--}}
-{{--                                Hình ảnh--}}
-{{--                            </section>--}}
-{{--                            <article>--}}
-{{--                                <input type="file" name="avatar" accept="image/*">--}}
-{{--                            </article>--}}
-{{--                        </div>--}}
-{{--                        <div class="input-checkbox">--}}
-{{--                            <section>--}}
-{{--                                trạng thái--}}
-{{--                            </section>--}}
-{{--                            <article>--}}
-{{--                                <label for="status"><input type="radio" checked id="status" name="status"> chưa mượn</label>--}}
-{{--                            </article>--}}
-{{--                        </div>--}}
+    <div class="create_card">
+        <form action="{{url('add-sach')}}" method="post">
+            @csrf
+            <h2>Thêm mới sách</h2>
+            <div class="_card--form">
+                <div class="input-contact">
+                    <label>
+                        <input type="text" name="tensach" placeholder="Tên sách">
+                        <section>
+                            Tên sách
+                        </section>
+                    </label>
+                </div>
+                <div class="input-contact">
+                    <label>
+                        <input type="text" name="masach" placeholder="T01">
+                        <section>
+                            Mã Sách
+                        </section>
+                    </label>
+                </div>
+                <div class="input-contact">
+                    <label>
+                        <input type="tel" name="theloai" list="theloai">
+                        <section>
+                            thể loại
+                        </section>
+                        <datalist id="theloai">
+                            <option name="truyentranh">Truyện Tranh</option>
+                            <option name="khoahoc">Khoa Học</option>
+                            <option name="daoly">Đạo Lý</option>
+                            <option name="kinhdoanh">Kinh Doanh</option>
+                            <option name="truyen18">Truyện 18+</option>
+                            <option name="truyenthieunhi">Truyện Thiếu Nhi</option>
+                        </datalist>
+                    </label>
+                </div>
+                <div class="input-contact">
+                    <label>
+                        <input type="text" name="namxuatban" placeholder="2012">
+                        <section>
+                            năm xuất bản
+                        </section>
+                    </label>
+                </div>
+                <div class="input-contact">
+                    <label>
+                        <input type="text" name="tacgia" placeholder="Raizel">
+                        <section>
+                            tác giả
+                        </section>
+                    </label>
+                </div>
+{{--                <div class="input-file">--}}
+{{--                    <section>--}}
+{{--                        Hình ảnh--}}
+{{--                    </section>--}}
+{{--                    <article>--}}
+{{--                        <input type="file" name="avatar" accept="image/*">--}}
+{{--                    </article>--}}
+{{--                </div>--}}
+                <div class="input-checkbox">
+                    <section>
+                        trạng thái
+                    </section>
+                    <article>
+                        <label for="status"><input type="radio" checked id="status" name="status"> chưa mượn</label>
+                    </article>
+                </div>
 
-{{--                        <div class="button_edit">--}}
-{{--                            <div class="button--close">--}}
-{{--                                <button type="button" class="close-edit-card">Thoát</button>--}}
-{{--                            </div>--}}
-{{--                            <div class="button--submit">--}}
-{{--                                <button type="submit">Xác nhận</button>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </form>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-            <div class="create_card">
-                <form action="{{url('add-sach')}}" method="post">
-                    @csrf
-                    <h2>Thêm mới sách</h2>
-                    <div class="_card--form">
-                        <div class="input-contact">
-                            <label>
-                                <input type="text" name="tensach" placeholder="Tên sách">
-                                <section>
-                                    Tên sách
-                                </section>
-                            </label>
-                        </div>
-                        <div class="input-contact">
-                            <label>
-                                <input type="text" name="masach" placeholder="T01">
-                                <section>
-                                    Mã Sách
-                                </section>
-                            </label>
-                        </div>
-                        <div class="input-contact">
-                            <label>
-                                <input type="text" name="theloai" placeholder="hành động">
-                                <section>
-                                    thể loại
-                                </section>
-                            </label>
-                        </div>
-                        <div class="input-contact">
-                            <label>
-                                <input type="text" name="namxuatban" placeholder="2012">
-                                <section>
-                                    năm xuất bản
-                                </section>
-                            </label>
-                        </div>
-                        <!-- <div class="input-contact">
-                            <label>
-                                <input type="text" name="ma-sach" placeholder="ms123">
-                                <section>
-                                    mã sách
-                                </section>
-                            </label>
-                        </div> -->
-                        <div class="input-contact">
-                            <label>
-                                <input type="text" name="tacgia" placeholder="Raizel">
-                                <section>
-                                    tác giả
-                                </section>
-                            </label>
-                        </div>
-                        <div class="input-file">
-                            <section>
-                                Hình ảnh
-                            </section>
-                            <article>
-                                <input type="file" name="avatar" accept="image/*">
-                            </article>
-                        </div>
-                        <div class="input-checkbox">
-                            <section>
-                                trạng thái
-                            </section>
-                            <article>
-                                <label for="status"><input type="radio" checked id="status" name="status"> chưa mượn</label>
-                            </article>
-                        </div>
-
-                        <div class="button_edit">
-                            <div class="button--close">
-                                <button type="button" class="close-edit-card">Thoát</button>
-                            </div>
-                            <div class="button--submit">
-                                <button type="submit">Xác nhận</button>
-                            </div>
-                        </div>
+                <div class="button_edit">
+                    <div class="button--close">
+                        <button type="button" class="close-edit-card">Thoát</button>
                     </div>
-                </form>
+                    <div class="button--submit">
+                        <button type="submit">Xác nhận</button>
+                    </div>
+                </div>
             </div>
+        </form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script>
     document.addEventListener("DOMContentLoaded",function(){
         var menu = document.getElementById('menu-toggle'),
@@ -2429,9 +2404,6 @@
 
     },false);
 </script>
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

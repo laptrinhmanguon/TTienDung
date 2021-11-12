@@ -77,18 +77,29 @@ Route::get('/', function () {
 
 //    Library index
     Route::get('/',[\App\Http\Controllers\SachController::class, 'index']);
-    Route::get('seach',[\App\Http\Controllers\SeachController::class, 'index']);
-    Route::get('muontra',[\App\Http\Controllers\MuonTraController::class, 'index']);
-    Route::get('docgia',[\App\Http\Controllers\DocGiaController::class, 'index']);
+    Route::get('theloai',[\App\Http\Controllers\DocGiaController::class, 'index']);
+    Route::get('muon-tra',[\App\Http\Controllers\MuonTraController::class, 'index']);
+    Route::get('doc-gia',[\App\Http\Controllers\DocGiaController::class, 'index']);
+
+
+//thể loại
+    Route::get('/theloai/truyentranh', [\App\Http\Controllers\TheloaiController::class, 'truyentranh']);
+    Route::get('/theloai/khoahoc', [\App\Http\Controllers\TheloaiController::class, 'khoahoc']);
+    Route::get('/theloai/daoly', [\App\Http\Controllers\TheloaiController::class, 'daoly']);
+    Route::get('/theloai/kinhdoanh', [\App\Http\Controllers\TheloaiController::class, 'kinhdoanh']);
+    Route::get('/theloai/truyen18', [\App\Http\Controllers\TheloaiController::class, 'truyen18']);
+    Route::get('/theloai/truyenthieunhi', [\App\Http\Controllers\TheloaiController::class, 'truyenthieunhi']);
 
 
 //  Library add
-Route::post('/add-sach', [\App\Http\Controllers\SachController::class, 'add']);
-Route::post('/add-muon', [\App\Http\Controllers\MuontraController::class, 'add']);
-Route::post('/add-docgia', [\App\Http\Controllers\DocgiaController::class, 'add']);
+    Route::post('/add-sach', [\App\Http\Controllers\SachController::class, 'add']);
+    Route::post('/add-muon', [\App\Http\Controllers\MuontraController::class, 'add']);
+    Route::post('/add-docgia', [\App\Http\Controllers\DocgiaController::class, 'add']);
 
 
 //  Library delete
-Route::delete('/sach/delete/{id}', [\App\Http\Controllers\SachController::class, 'delete']);
-Route::delete('/muon-tra/delete/{id}', [\App\Http\Controllers\MuontraController::class, 'delete']);
-Route::delete('/doc-gia/delete/{id}', [\App\Http\Controllers\DocgiaController::class, 'delete']);
+    Route::delete('/sach/delete/{id}', [\App\Http\Controllers\SachController::class, 'delete']);
+    Route::delete('/muon-tra/delete/{id}', [\App\Http\Controllers\MuontraController::class, 'delete']);
+    Route::delete('/doc-gia/delete/{id}', [\App\Http\Controllers\DocgiaController::class, 'delete']);
+    Route::delete('/theloai/delete/{id}', [\App\Http\Controllers\TheloaiController::class, 'delete']);
+

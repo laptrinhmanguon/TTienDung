@@ -17,6 +17,7 @@ class CreateDbMuonSachTable extends Migration
             $table->id();
             $table->string('tendocgia');
             $table->string('madocgia');
+            $table->string('lop');
             $table->string('tensach');
             $table->string('masach');
             $table->integer('sodienthoai');

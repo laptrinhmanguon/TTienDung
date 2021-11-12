@@ -14,7 +14,7 @@ class DocGiaController extends Controller
         $Tbl_docgia = DB::table('doc_gia')->select('*');
         $Tbl_docgia = $Tbl_docgia->get();
 
-        return view('layout/docgia', compact('Tbl_docgia'));
+        return view('layout/doc_gia', compact('Tbl_docgia'));
     }
     function add(Request $request){
         $Tbl_docgia = new tbl_docgia;
@@ -26,7 +26,7 @@ class DocGiaController extends Controller
 
 
         $Tbl_docgia->save();
-        return redirect('/docgia');
+        return redirect('/doc-gia');
 
     }
     function delete($id){

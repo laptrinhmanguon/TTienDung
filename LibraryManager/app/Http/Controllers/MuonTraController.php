@@ -15,12 +15,13 @@ class MuonTraController extends Controller
         $Tbl_muon = DB::table('muon_tra')->select('*');
         $Tbl_muon = $Tbl_muon->get();
 
-        return view('/layout/muontra', compact('Tbl_muon'));
+        return view('/layout/muon_tra', compact('Tbl_muon'));
     }
     function add(Request $request){
         $Tbl_muon = new tbl_muontra;
         $Tbl_muon -> tendocgia = $request -> tendocgia;
         $Tbl_muon -> madocgia = $request -> madocgia;
+        $Tbl_muon -> lop = $request -> lop;
         $Tbl_muon -> sodienthoai = $request -> sodienthoai;
         $Tbl_muon -> tensach = $request -> tensach;
         $Tbl_muon -> masach = $request -> masach;
@@ -28,12 +29,12 @@ class MuonTraController extends Controller
         $Tbl_muon -> thuthu = $request -> thuthu;
 
         $Tbl_muon -> save();
-        return redirect('/muontra');
+        return redirect('/muon-tra');
     }
     function delete($id){
         $Tbl_muon = tbl_muontra::find($id);
         $Tbl_muon->delete();
 
-        return redirect('/muontra')->with('success','đã xóa');
+        return redirect('/muon-tra')->with('success','đã xóa');
     }
 }

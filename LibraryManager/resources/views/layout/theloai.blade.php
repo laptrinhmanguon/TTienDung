@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +7,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Quản lý thư viện</title>
-
+    {{--    <link rel="stylesheet" href="assets/stylesheets/main.css">--}}
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css'>
-
     <style>
-
+        {{--/* @include transform(rotate(30deg)); */--}}
+        {{--/* @include centerAbsolute(top); */--}}
+        {{--/* @include flexbox; */--}}
+        {{--/* @include justify-content(space-between); */--}}
         /*.color{
             color: map-get($color, red);
         }*/
@@ -64,7 +67,37 @@
         .ta-justify {
             text-align: justify; }
 
-
+        {{--/* @include transform(rotate(30deg)); */--}}
+        {{--/* @include centerAbsolute(top); */--}}
+        {{--/* @include flexbox; */--}}
+        {{--/* @include justify-content(space-between); */--}}
+        /*@font-face {*/
+        /*    font-family: Averta;*/
+        /*    src: url("../fonts/Averta.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Bold;*/
+        /*    src: url("../fonts/Averta-Bold.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Extra-Bold;*/
+        /*    src: url("../fonts/Averta-Extra-Bold.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Semibold;*/
+        /*    src: url("../fonts/Averta-Semibold.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Black;*/
+        /*    src: url("../fonts/Averta-Black.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Light;*/
+        /*    src: url("../fonts/Averta-Light.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Light;*/
+        /*    src: url("../fonts/Averta-Light.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Thin-Italic;*/
+        /*    src: url("../fonts/Averta-Thin-Italic.otf"); }*/
+        /*@font-face {*/
+        /*    font-family: Averta-Bold-Italic;*/
+        /*    src: url("../fonts/Averta-Bold-Italic.otf"); }*/
         *,
         *::before,
         *::after {
@@ -1957,6 +1990,7 @@
 
     </style>
 </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <body>
 <div class="container-fluid">
@@ -1985,23 +2019,36 @@
                                     Quản lý
                                 </span>
                         </article>
-
                     </a>
                 </li>
-                <li>
-                    <a href="{{url('/seach')}}">
-                        <article>
-                            <section>
-                                <i class="fas fa-search"></i>
-                            </section>
-                            <span>
-                                    Tìm kiếm
-                                </span>
-                        </article>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
+                        <i class="fas fa-book-open" style="padding-right: 25px"></i>
+                        <span class="nav-link-text" style="padding-right: 135px">Thể loại </span>
                     </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents">
+                        <li>
+                            <a href="{{url('/theloai/truyentranh')}}">Truyện tranh</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/khoahoc')}}">khoa học </a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/daoly')}}"> Đạo lí </a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/kinhdoanh')}}"> Kinh doanh </a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/truyen18')}}"> Truyện 18+</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/theloai/truyenthieunhi')}}"> Truyện Thiếu Nhi </a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="{{url('/muontra')}}">
+                    <a href="{{url('/muon-tra')}}">
                         <article>
                             <section>
                                 <i class="fas fa-handshake-slash"></i>
@@ -2013,7 +2060,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{url('/docgia')}}">
+                    <a href="{{url('/doc-gia')}}">
                         <article>
                             <section>
                                 <i class="fas fa-user-check"></i>
@@ -2034,70 +2081,38 @@
     <!-- ***************************************************************************************************************** -->
     <!-- PHẦN NỘI DUNG -->
     <div class="content">
-        <div class="search--form">
-            <form>
-                <label>
-                    <input type="text" placeholder="Bạn muốn tìm gì...">
-                </label>
-                <label>
-                    <button>
-                        <i class="fas fa-search"></i>
-                    </button>
-                </label>
-            </form>
+        <div class="result--key" style="padding: 0.75rem">
+            <table class="table table-bordered" >
+                <thead class="thead-dark" >
+                <tr >
+                    <th scope="col">STT</th>
+                    <th scope="col">Tên Sách</th>
+                    <th scope="col">Thể Loại</th>
+                    <th scope="col">Mã Sách</th>
+                    <th scope="col">Tác Giả</th>
+                    <th scope="col">Năm XB</th>
+                    <th scope="col">Trạng Thái</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($Tbl_sach as $s)
+                    @method('DELETE')
+                    @csrf
+                    <tr>
+                        <th>{{$s -> id}}</th>
+                        <td>{{$s -> tensach}}</td>
+                        <td>{{$s -> theloai}}</td>
+                        <td>{{$s -> masach}}</td>
+                        <td>{{$s -> tacgia}}</td>
+                        <td>{{$s -> namxuatban}}</td>
+                        <td>
+                            Đã Mượn
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
-{{--        <div class="result--key">--}}
-{{--            <div class="result__item">--}}
-{{--                <div class="cardCustom20--content card">--}}
-{{--                    <article class="blog-card">--}}
-{{--                        <img class="post-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/pike-place.jpg" />--}}
-{{--                        <div class="article-details">--}}
-{{--                            <h3 class="post-title">Tên sách</h3>--}}
-{{--                            <p class="post-category"><b>Thể loại:</b> hành động</p>--}}
-{{--                            <p class="post-publish"><b>xuất bản:</b> 2012</p>--}}
-{{--                            <p class="post-id"><b>mã sách:</b> ms123</p>--}}
-{{--                            <p class="post-author"><b>tác giả:</b> abc</p>--}}
-{{--                            <p class="post-status"><b>trang thái:</b> đã mượn</p>--}}
-{{--                            <div class="post-edit">--}}
-{{--                                <button type="button" class="post__link--edit">--}}
-{{--                                    Chỉnh sửa--}}
-{{--                                </button>--}}
-{{--                                <button type="button" class="post__link--delete">--}}
-{{--                                    Xóa--}}
-{{--                                </button>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </article>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-        @foreach($Tbl_sach as $s)
-            <div class="result--key">
-                <div class="result__item">
-                    <div class="cardCustom20--content card">
-                        <article class="blog-card">
-                            <img class="post-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/pike-place.jpg" />
-                            <div class="article-details">
-                                <h3 class="post-title">{{$s -> tensach}}</h3>
-                                <p class="post-category"><b>Thể loại:</b>{{$s -> theloai}}</p>
-                                <p class="post-publish"><b>xuất bản:</b>{{$s -> namxuatban}}</p>
-                                <p class="post-id"><b>mã sách:</b>{{$s -> masach}}</p>
-                                <p class="post-author"><b>tác giả:</b>{{$s -> tacgia}}</p>
-                                <p class="post-status"><b>trang thái:</b> đã mượn</p>
-                                {{--                            <div class="post-edit">--}}
-                                {{--                                <button type="button" class="post__link--edit">--}}
-                                {{--                                    Chỉnh sửa--}}
-                                {{--                                </button>--}}
-                                {{--                                <button type="button" class="post__link--delete">--}}
-                                {{--                                    Xóa--}}
-                                {{--                                </button>--}}
-                                {{--                            </div>--}}
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        @endforeach
     </div>
 
 
@@ -2179,6 +2194,9 @@
     </div>
 
 </div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script>
     document.addEventListener("DOMContentLoaded",function(){
         var menu = document.getElementById('menu-toggle'),
@@ -2271,6 +2289,7 @@
 
     },false);
 </script>
+<script src="assets/javascripts/main.js"></script>
 </body>
 
 </html>
